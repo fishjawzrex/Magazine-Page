@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Anton|EB+Garamond|Righteous&display=swap" rel="stylesheet">
+    <title>Magazine Page</title>
+    <style>
+        *{
+            margin:0;
+            box-sizing: border-box;
+            font-family: 'Righteous', serif;
+            padding: 0;
+        }
+
+
+
+        html{
+            background:rgba(217, 255, 0, 0.849);
+            min-height: 100%;
+            top:0px;
+            bottom:0px;
+            left:0px;
+            right:0px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1.618fr 1fr;
+            height: 100vh;
+
+
+            
+        }
+        :root{
+            --main-div-color: purple; 
+        }
+        .sub{
+            /*
+            padding: 10%;
+            text-align: center;
+            margin:5px;
+            border-radius: 5%;
+            */
+            align-items: center;
+            text-align: center;
+        }
+        .red{
+            background: var(--main-div-color);
+            border: "2px solid black";
+            grid-column: span 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: auto;
+            display: none;
+
+        }
+        .red h1 {
+            font-size: 20px;
+        }
+        .yellow{
+            background: rgba(217, 255, 0, 0.849);
+            border: "2px solid black";
+
+
+        }
+        .green{
+            background: rgba(217, 255, 0, 0.527);
+            border: "2px solid black";
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            display: block;
+            padding-top: 50px;
+        }
+        .blue{
+            background: rgba(47, 0, 255, 0.877);
+            border: "2px solid black";
+            grid-column: span 2;
+
+        }
+        .orange{
+            background: rgba(255, 145, 0, 0.877);
+            border: "2px solid black";
+
+        }
+        .pink{
+            background: rgba(223, 110, 110, 0.877);
+            border: "2px solid black";
+
+        }
+        .black{
+            background: rgba(31, 29, 29, 0.877);
+            border: "2px solid black";
+            color: white;
+
+        }
+        .purple{
+            background: rgba(223, 6, 205, 0.877);
+            border: "2px solid black";
+            color: rgb(15, 13, 15);
+
+        }
+        .inCard {
+            padding: 10%;
+        }
+        .greenCard{
+            margin-top: 20px;
+        }
+        .headerDiv {
+            margin-top: 10%;
+        }
+        h1,h2 {
+            letter-spacing: 1px;
+            color:#F51720;
+        }
+        .btn {
+            margin-bottom: 40px;
+            color: #F51720'
+           
+        }
+        p{
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            font-size:8px;
+            font-weight: bold;
+        }
+        #hide {
+            border: black 2px solid;
+            width: 100px;
+            border-radius: 5%;
+            height: 30px;
+            background: none;
+            color:#F51720;
+        }
+        .btn:hover{
+            transform: scale(1.1);
+        }
+        .headertnt {
+            font-size: 25px;
+        }
+        @media (max-width:  700px){
+            .container{display: flex;
+            flex-direction: column;
+            height: 100vh;
+            }
+        }
+        .backgroundImg{
+            background-image: url('https://images.pexels.com/photos/2176593/pexels-photo-2176593.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+            background-position: center;
+            position:absolute;
+            background-size: cover;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            z-index: -1;
+        }
+        /*new style sheet*/
+       /*
+        *{
+            margin: 0;
+            padding:0;
+            box-sizing: border-box;
+        }*/
+        .nav-container {
+            display:flex;
+            max-height: 40px;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background: rgba(217, 255, 0, 0.849);
+            color: #B175FF;
+            font-family: 'Rajdhani', sans-serif;
+        }
+        .nav-link {
+            list-style-type: none;
+            display: inline-block;
+            margin-left: 10px;
+        }
+        .nav-links {
+            display:flex;
+            justify-content: space-between;
+            
+        }
+        .nav-link a{
+            text-decoration: none;
+            color: #F51720;
+            font-size: 10px;
+        }
+        .hamburger{
+            display: none;
+            height: 100%;
+            right: 0;
+            margin-top:5px;
+            width: 70px;
+            background-color:none;
+         
+        }
+        @media (max-width: 700px){
+            .nav{
+                display: none;
+            }
+            .hamburger{
+                display:flex;
+                justify-content: space-around;
+                align-items: center;
+                flex-direction: column;
+                padding-top: 5%;
+                padding-bottom: 5%;
+
+            }
+           
+        }
+        .bar {
+            height: 3px;
+            width: 20px;
+            background-color: #F51720;
+            border: none;
+            margin: 2px;
+        }
+        .hamburger:hover {
+            cursor: pointer;
+
+        }
+        .dropper:hover  .drop-down{
+            display: flex;
+        }
+        .drop-down {
+            display:none;
+            flex-direction: column;
+
+        }
+        .drop-down div{
+            padding: 10px 10px;
+            background-color: #EFEBE2;
+        }
+        .dropper {
+            position: absolute;
+            right: 0;
+            top:0;
+            flex-direction: column;
+        }
+        .logo{
+            color:#B175FF;
+        }
+        .inCard{
+            padding-left: 30.9%;
+            padding-right: 30.9%;
+        }
+    
+    </style>
+    <script src="https://kit.fontawesome.com/298405996d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+          <div class='nav-container' >
+            <div class="logo">
+                <h1 class='logoHeader'><i class="far fa-newspaper"></i></h1>
+            </div>
+            <div class='dropper'>
+                <div class="hamburger">
+                    <div class='bar'></div>
+                    <div class='bar'></div>
+                    <div class='bar'></div>
+                </div>
+                <div class="drop-down">
+                    <div>HOME</div>
+                    <div>ABOUT</div>
+                    <div>STORE</div>
+                </div>
+            </div>
+            <nav class='nav'>
+                
+                <ul class='navlinks'>
+                    <li class='nav-link'><a href="#">Home</a></li>
+                    <li class='nav-link'><a href="#">About</a></li>
+                    <li class='nav-link'><a href="#">Store</a></li>
+                </ul>
+            </nav>
+        </div>
+    <div class="container">
+            <!--<div class="sub red"><h1>THIS IS GOING TO BE GREAT!</h1></div>-->
+            <div class="sub yellow">
+                <div class="headerDiv headertnt"><h2 style="font-size: 70px;">THE FRONT PAGE</h2></div>
+                <div class="inCard">
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                        Voluptatibus, animi! Recusandae consectetur earum modi 
+                        porro obcaecati voluptate blanditiis. Obcaecati necessitatibus 
+                        debitis excepturi temporibus quis facilis porro ipsa ut enim delectus.
+                       Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae 
+                       laborum molestiae quaerat eaque, fuga quis doloribus enim ullam autem 
+                       quas quo. Quis nisi aliquam aperiam eius facere impedit
+                        suscipit molestias!</p>
+                        
+                </div>
+                <div class="btn"><button onclick=hideDiv() id=hide>HIDE NEWS</button></div>
+                
+            </div>
+            <div class="sub green"><div>
+                <div class="headerDiv">
+                    <div class="backgroundImg"></div>
+                    <h2>THE NEWS</h2>
+                </div>
+                <div class="inCard greenCard"><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Voluptatibus, animi! Recusandae consectetur earum modi 
+                    porro obcaecati voluptate blanditiis. Obcaecati necessitatibus 
+                    debitis excepturi temporibus quis facilis porro ipsa ut enim delectus.
+                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae 
+                   laborum molestiae quaerat eaque, fuga quis doloribus enim ullam autem 
+                   quas quo. Quis nisi aliquam aperiam eius facere impedit
+                    suscipit molestias!</p>
+                </div>
+            </div>
+
+
+
+            
+
+
+    </div>
+
+</body>
+<script>
+    function hideDiv(){
+  var x = document.getElementsByClassName('green')[0];
+  var y = document.getElementsByClassName('container')[0];
+  var z = document.getElementById('hide');
+
+  if(x.style.display==='none'){
+    x.style.display='block';
+    
+    y.style.gridTemplateColumns = '2fr 1fr';
+    z.innerText = 'HIDE NEWS'
+  }else{
+    x.style.display='none';
+    y.style.gridTemplateColumns = '1fr';
+    z.innerText = 'SHOW NEWS'
+  }
+}
+</script>
+</html>
